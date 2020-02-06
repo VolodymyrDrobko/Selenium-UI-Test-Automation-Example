@@ -15,9 +15,10 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void beforeMethodSetUp(ITestContext iTestContext) {
         WebDriver driver = DriverFactory
-                .createDriverInstance(Optional.ofNullable(Configuration.BROWSER).orElse(iTestContext.getCurrentXmlTest().getParameter("browserName")));
+                .createDriverInstance(Optional.ofNullable(Configuration.getBrowser())
+                        .orElse(iTestContext.getCurrentXmlTest().getParameter("browserName")));
         DriverManager.setDriver(driver);
-        driver.get(Optional.ofNullable(Configuration.URL).orElse(DEFAULT_URL));
+        driver.get(Optional.ofNullable(Configuration.getURL()).orElse(DEFAULT_URL));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }

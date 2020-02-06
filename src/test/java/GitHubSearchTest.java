@@ -9,7 +9,7 @@ public class GitHubSearchTest extends BaseTest {
     public void gitHubGeneralLogin() {
         GitHubLoginPageBO gitHubLoginPageBO = new GitHubLoginPageBO();
         gitHubLoginPageBO
-                .loginToGit(Configuration.LOGIN, Configuration.PASSWORD)
+                .loginToGit(Configuration.getLogin(), Configuration.getPassword())
                 .checkAllAssertions();
     }
 
@@ -17,7 +17,7 @@ public class GitHubSearchTest extends BaseTest {
     public void gitHubGeneralLogin2() {
         GitHubLoginPageBO gitHubLoginPageBO = new GitHubLoginPageBO();
         gitHubLoginPageBO
-                .loginToGitWithFail(Configuration.LOGIN, Configuration.PASSWORD)
+                .loginToGitWithFail(Configuration.getLogin(), Configuration.getPassword())
                 .checkAllAssertions();
     }
 

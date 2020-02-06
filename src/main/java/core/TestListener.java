@@ -12,7 +12,8 @@ public class TestListener implements ITestListener {
     @Override
     public void onStart(ITestContext iTestContext) {
         String testName = iTestContext.getCurrentXmlTest().getName();
-        String browserName = Optional.ofNullable(Configuration.BROWSER).orElse(iTestContext.getCurrentXmlTest().getParameter("browserName"));
+        String browserName = Optional.ofNullable(Configuration.getBrowser())
+                .orElse(iTestContext.getCurrentXmlTest().getParameter("browserName"));
         ReportManager.setUpReport(testName, browserName);
     }
 

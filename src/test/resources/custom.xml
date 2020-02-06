@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="example" configfailurepolicy="continue"
-    parallel="methods" thread-count="4" verbose="10">
+    parallel="methods" thread-count="4" verbose="1">
     <parameter name="browserName" value="Chrome"/>
     <listeners>
         <listener class-name="core.TestListener"/>
